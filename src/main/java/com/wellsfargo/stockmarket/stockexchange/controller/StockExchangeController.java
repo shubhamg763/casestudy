@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wellsfargo.stockmarket.stockexchange.models.Company;
-import com.wellsfargo.stockmarket.stockexchange.models.CompanyToStockExchangeMapper;
 import com.wellsfargo.stockmarket.stockexchange.models.StockExchange;
 import com.wellsfargo.stockmarket.stockexchange.service.StockExchangeService;
 
@@ -59,7 +58,7 @@ public class StockExchangeController {
 	
 	//
 	@GetMapping("/stockexchanges/{id}/companies")
-	public List<CompanyToStockExchangeMapper> getAllCompaniesList(@PathVariable Integer id) {
+	public List<Company> getAllCompaniesList(@PathVariable Integer id) {
 		return stockExchangeService.getAllCompaniesList(id);
 	}
 	

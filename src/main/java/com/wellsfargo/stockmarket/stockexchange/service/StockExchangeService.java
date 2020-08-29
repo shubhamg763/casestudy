@@ -1,6 +1,8 @@
 package com.wellsfargo.stockmarket.stockexchange.service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,12 +46,22 @@ public class StockExchangeService {
 		stockExchangeRepository.deleteById(id);
 	}
 
-	public List<CompanyToStockExchangeMapper> getAllCompaniesList(Integer id) {
-		
+	public List<Company> getAllCompaniesList(Integer id) {
+
 		StockExchange stockExchange = new StockExchange();
 		stockExchange = stockExchangeRepository.findById(id).get();
-		return companyToStockExchangeMapperRepository.findAllByStockExchange(stockExchange.getStockExchange());
-
+		List<CompanyToStockExchangeMapper> companyToStockExchangeMapperList = new ArrayList<>();
+		companyToStockExchangeMapperList = companyToStockExchangeMapperRepository
+				.findAllByStockExchange(stockExchange.getStockExchange());
+		List<Company> companyList = new ArrayList<>();
+		Company company;
+		for (int i = 0; i < companyToStockExchangeMapperList.size(); i++) {
+			Optional<Company> c = companyRepository.findById(companyToStockExchangeMapperList.get(i).getAssocCompanyId());
+			company = c.get();
+			companyList.add(company);
+		}
+		
+		return companyList;
 	}
 
 	public List<Company> getCompanies() {
