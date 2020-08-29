@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.wellsfargo.stockmarket.stockexchange.models.Company;
+import com.wellsfargo.stockmarket.stockexchange.models.CompanyToStockExchangeMapper;
 import com.wellsfargo.stockmarket.stockexchange.models.StockExchange;
 import com.wellsfargo.stockmarket.stockexchange.service.StockExchangeService;
 
@@ -53,6 +55,18 @@ public class StockExchangeController {
 	@DeleteMapping("/stockexchanges/{id}")
 	public void deleteStockExchange(@PathVariable Integer id) {
 		stockExchangeService.deleteStockExchange(id);
+	}
+	
+	//
+	@GetMapping("/stockexchanges/{id}/companies")
+	public List<CompanyToStockExchangeMapper> getAllCompaniesList(@PathVariable Integer id) {
+		return stockExchangeService.getAllCompaniesList(id);
+	}
+	
+	// Returns all companies in the database
+	@GetMapping("/companies")
+	public List<Company> getCompanies() {
+		return stockExchangeService.getCompanies();
 	}
 
 }

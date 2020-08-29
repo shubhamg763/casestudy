@@ -5,7 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.wellsfargo.stockmarket.stockexchange.models.Company;
+import com.wellsfargo.stockmarket.stockexchange.models.CompanyToStockExchangeMapper;
 import com.wellsfargo.stockmarket.stockexchange.models.StockExchange;
+import com.wellsfargo.stockmarket.stockexchange.repository.CompanyRepository;
+import com.wellsfargo.stockmarket.stockexchange.repository.CompanyToStockExchangeMapperRepository;
 import com.wellsfargo.stockmarket.stockexchange.repository.StockExchangeRepository;
 
 @Service
@@ -13,6 +17,12 @@ public class StockExchangeService {
 
 	@Autowired
 	private StockExchangeRepository stockExchangeRepository;
+
+	@Autowired
+	private CompanyToStockExchangeMapperRepository companyToStockExchangeMapperRepository;
+
+	@Autowired
+	private CompanyRepository companyRepository;
 
 	// Returns all the stock exchanges present in database
 	public List<StockExchange> getStockExchangeList() {
@@ -29,8 +39,21 @@ public class StockExchangeService {
 		stockExchangeRepository.save(stockExchange);
 	}
 
-	//Deletes the Stock Exchange from our repository
+	// Deletes the Stock Exchange from our repository
 	public void deleteStockExchange(Integer id) {
 		stockExchangeRepository.deleteById(id);
+	}
+
+	public List<CompanyToStockExchangeMapper> getAllCompaniesList(Integer id) {
+		
+		StockExchange stockExchange = new StockExchange();
+		stockExchange = stockExchangeRepository.findById(id).get();
+		return companyToStockExchangeMapperRepository.findAllByStockExchange(stockExchange.getStockExchange());
+
+	}
+
+	public List<Company> getCompanies() {
+
+		return companyRepository.findAll();
 	}
 }

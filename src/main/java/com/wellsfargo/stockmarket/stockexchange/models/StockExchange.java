@@ -1,18 +1,28 @@
 package com.wellsfargo.stockmarket.stockexchange.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "stock_exchange")
+@Table(name = "t_stockexchange", schema ="stockexchange")
 public class StockExchange {
 	
 	@Id
-	private Integer id;
-	private String name;
+	@Column(name = "stockexchangeid")
+	private Integer stockExchangeId;
+	
+	@Column(name = "stockexchange")
+	private String stockExchange;
+	
+	@Column(name = "brief")
 	private String brief;
-	private String address;
+	
+	@Column(name = "contactaddress")
+	private String contactAddress;
+	
+	@Column(name = "remarks")
 	private String remarks;
 	
 	//Default Constructor
@@ -20,49 +30,57 @@ public class StockExchange {
 		//do nothing
 	}
 	
-	//Constructor
-	public StockExchange(Integer id, String name, String brief, String address, String remarks) {
+	//Parameterized Constructor
+	public StockExchange(Integer stockExchangeId, String stockExchange, String brief, String contactAddress, String remarks) {
 		super();
-		this.id = id;
-		this.name = name;
+		this.stockExchangeId = stockExchangeId;
+		this.stockExchange = stockExchange;
 		this.brief = brief;
-		this.address = address;
+		this.contactAddress = contactAddress;
 		this.remarks = remarks;
 	}
-	
-	//Getters and Setters
-	public int getId() {
-		return id;
+	public Integer getStockExchangeId() {
+		return stockExchangeId;
 	}
-	public void setId(int id) {
-		this.id = id;
+
+	public void setStockExchangeId(Integer stockExchangeId) {
+		this.stockExchangeId = stockExchangeId;
 	}
-	public String getName() {
-		return name;
+
+	public String getStockExchange() {
+		return stockExchange;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setStockExchange(String stockExchange) {
+		this.stockExchange = stockExchange;
 	}
+
 	public String getBrief() {
 		return brief;
 	}
+
 	public void setBrief(String brief) {
 		this.brief = brief;
 	}
-	public String getAddress() {
-		return address;
+
+	public String getContactAddress() {
+		return contactAddress;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+
+	public void setContactAddress(String contactAddress) {
+		this.contactAddress = contactAddress;
 	}
+
 	public String getRemarks() {
 		return remarks;
 	}
+
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
-	
-	
-
 
 }
+	
+
+
+	
