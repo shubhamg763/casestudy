@@ -1,4 +1,4 @@
-package com.wellsfargo.stockexchange;
+package com.wellsfargo.stockmarket.stockexchange;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

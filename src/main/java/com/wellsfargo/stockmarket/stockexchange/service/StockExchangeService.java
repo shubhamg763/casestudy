@@ -1,11 +1,12 @@
-package com.wellsfargo.stockexchange.service;
+package com.wellsfargo.stockmarket.stockexchange.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.wellsfargo.stockexchange.models.StockExchange;
-import com.wellsfargo.stockexchange.repository.StockExchangeRepository;
+
+import com.wellsfargo.stockmarket.stockexchange.models.StockExchange;
+import com.wellsfargo.stockmarket.stockexchange.repository.StockExchangeRepository;
 
 @Service
 public class StockExchangeService {
