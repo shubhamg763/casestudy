@@ -1,4 +1,4 @@
-package com.wellsfargo.stockmarket.stockexchange.models;
+package com.wellsfargo.stockmarket.stockexchange.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

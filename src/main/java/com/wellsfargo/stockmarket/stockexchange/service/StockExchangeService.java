@@ -7,9 +7,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.wellsfargo.stockmarket.stockexchange.models.Company;
-import com.wellsfargo.stockmarket.stockexchange.models.CompanyToStockExchangeMapper;
-import com.wellsfargo.stockmarket.stockexchange.models.StockExchange;
+import com.wellsfargo.stockmarket.stockexchange.entity.Company;
+import com.wellsfargo.stockmarket.stockexchange.entity.CompanyToStockExchangeMapper;
+import com.wellsfargo.stockmarket.stockexchange.entity.StockExchange;
 import com.wellsfargo.stockmarket.stockexchange.repository.CompanyRepository;
 import com.wellsfargo.stockmarket.stockexchange.repository.CompanyToStockExchangeMapperRepository;
 import com.wellsfargo.stockmarket.stockexchange.repository.StockExchangeRepository;

@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.wellsfargo.stockmarket.stockexchange.models.CompanyToStockExchangeMapper;
+import com.wellsfargo.stockmarket.stockexchange.entity.CompanyToStockExchangeMapper;
 
 public interface CompanyToStockExchangeMapperRepository extends JpaRepository<CompanyToStockExchangeMapper, String > {
 

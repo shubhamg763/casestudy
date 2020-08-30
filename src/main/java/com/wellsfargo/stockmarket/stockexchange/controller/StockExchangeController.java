@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wellsfargo.stockmarket.stockexchange.models.Company;
-import com.wellsfargo.stockmarket.stockexchange.models.StockExchange;
+import com.wellsfargo.stockmarket.stockexchange.entity.Company;
+import com.wellsfargo.stockmarket.stockexchange.entity.StockExchange;
 import com.wellsfargo.stockmarket.stockexchange.service.StockExchangeService;
 
 /*Rest controller annotation enables the handler methods in this controller to be exposed as 
