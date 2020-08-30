@@ -46,6 +46,7 @@ public class StockExchangeService {
 		stockExchangeRepository.deleteById(id);
 	}
 
+	//Returns all the company objects listed in a stock exchange
 	public List<Company> getAllCompaniesList(Integer id) {
 
 		StockExchange stockExchange = new StockExchange();
@@ -56,7 +57,7 @@ public class StockExchangeService {
 		List<Company> companyList = new ArrayList<>();
 		Company company;
 		for (int i = 0; i < companyToStockExchangeMapperList.size(); i++) {
-			Optional<Company> c = companyRepository.findById(companyToStockExchangeMapperList.get(i).getAssocCompanyId());
+			Optional<Company> c = companyRepository.findByCompanyCode(companyToStockExchangeMapperList.get(i).getCompanyCode());
 			company = c.get();
 			companyList.add(company);
 		}
@@ -64,8 +65,4 @@ public class StockExchangeService {
 		return companyList;
 	}
 
-	public List<Company> getCompanies() {
-
-		return companyRepository.findAll();
-	}
 }

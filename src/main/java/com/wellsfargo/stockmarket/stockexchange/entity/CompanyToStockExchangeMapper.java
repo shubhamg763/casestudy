@@ -6,33 +6,34 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "company_x_stockexchange", schema ="stockexchange")
+@Table(name = "company_x_stockexchange", schema = "stockexchange")
 public class CompanyToStockExchangeMapper {
 
 	@Id
 	@Column(name = "stockcode")
 	private String stockCode;
 
-	@Column(name = "assoccompanyid")
-	private Integer assocCompanyId;
+	@Column(name = "companycode")
+	private Integer companyCode;
 
 	@Column(name = "stockexchange")
 	private String stockExchange;
 
-	//Parameterized Constructor
-	public CompanyToStockExchangeMapper(String stockCode, Integer assocCompanyId, String stockExchange) {
-		super();
-		this.stockCode = stockCode;
-		this.assocCompanyId = assocCompanyId;
-		this.stockExchange = stockExchange;
-	}
-
-	//Default Constructor
+	// Default Constructor
 	public CompanyToStockExchangeMapper() {
 
 	}
-	
-	//Getters and Setters
+
+	// Parameterized Constructor
+	public CompanyToStockExchangeMapper(String stockCode, Integer companyCode, String stockExchange) {
+		super();
+		this.stockCode = stockCode;
+		this.companyCode = companyCode;
+		this.stockExchange = stockExchange;
+	}
+
+	// Getters and Setters
+
 	public String getStockCode() {
 		return stockCode;
 	}
@@ -41,12 +42,12 @@ public class CompanyToStockExchangeMapper {
 		this.stockCode = stockCode;
 	}
 
-	public Integer getAssocCompanyId() {
-		return assocCompanyId;
+	public Integer getCompanyCode() {
+		return companyCode;
 	}
 
-	public void setAssocCompanyId(Integer assocCompanyId) {
-		this.assocCompanyId = assocCompanyId;
+	public void setCompanyCode(Integer companyCode) {
+		this.companyCode = companyCode;
 	}
 
 	public String getStockExchange() {
@@ -57,6 +58,4 @@ public class CompanyToStockExchangeMapper {
 		this.stockExchange = stockExchange;
 	}
 
-	
-	
 }

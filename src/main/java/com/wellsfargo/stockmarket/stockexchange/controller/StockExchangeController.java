@@ -47,7 +47,6 @@ public class StockExchangeController {
 	@PostMapping("/stockexchanges")
 	public void addStockExchange(@RequestBody StockExchange stockExchange) {
 		stockExchangeService.addStockExchange(stockExchange);
-				
 	}
 	
 	//Deletes the stock exchange from our database
@@ -62,10 +61,4 @@ public class StockExchangeController {
 		return stockExchangeService.getAllCompaniesList(id);
 	}
 	
-	// Returns all companies in the database
-	@GetMapping("/companies")
-	public List<Company> getCompanies() {
-		return stockExchangeService.getCompanies();
-	}
-
 }
