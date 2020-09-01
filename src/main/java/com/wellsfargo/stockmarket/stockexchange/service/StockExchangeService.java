@@ -37,8 +37,8 @@ public class StockExchangeService {
 	}
 
 	// Adds a Stock Exchange to our repository
-	public void addStockExchange(StockExchange stockExchange) {
-		stockExchangeRepository.save(stockExchange);
+	public StockExchange addStockExchange(StockExchange stockExchange) {
+		return stockExchangeRepository.save(stockExchange);
 	}
 
 	// Deletes the Stock Exchange from our repository
