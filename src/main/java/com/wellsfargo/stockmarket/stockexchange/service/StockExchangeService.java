@@ -57,7 +57,7 @@ public class StockExchangeService {
 		List<Company> companyList = new ArrayList<>();
 		Company company;
 		for (int i = 0; i < companyToStockExchangeMapperList.size(); i++) {
-			Optional<Company> c = companyRepository.findByCompanyCode(companyToStockExchangeMapperList.get(i).getCompanyCode());
+			Optional<Company> c = companyRepository.findByCompanyCode(companyToStockExchangeMapperList.get(i).getAssocCompanyCode());
 			company = c.get();
 			companyList.add(company);
 		}

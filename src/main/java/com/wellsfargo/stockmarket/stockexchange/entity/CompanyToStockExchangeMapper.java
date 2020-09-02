@@ -12,12 +12,15 @@ public class CompanyToStockExchangeMapper {
 	@Id
 	@Column(name = "stockcode")
 	private String stockCode;
-
-	@Column(name = "companycode")
-	private Integer companyCode;
-
+	
+	@Column(name = "assoccompanycode")
+	private Integer assocCompanyCode;
+	
 	@Column(name = "stockexchange")
 	private String stockExchange;
+
+
+
 
 	// Default Constructor
 	public CompanyToStockExchangeMapper() {
@@ -25,29 +28,22 @@ public class CompanyToStockExchangeMapper {
 	}
 
 	// Parameterized Constructor
-	public CompanyToStockExchangeMapper(String stockCode, Integer companyCode, String stockExchange) {
+	
+	public CompanyToStockExchangeMapper(Integer assocCompanyCode, String stockExchange, String stockCode) {
 		super();
-		this.stockCode = stockCode;
-		this.companyCode = companyCode;
+		this.assocCompanyCode = assocCompanyCode;
 		this.stockExchange = stockExchange;
-	}
-
-	// Getters and Setters
-
-	public String getStockCode() {
-		return stockCode;
-	}
-
-	public void setStockCode(String stockCode) {
 		this.stockCode = stockCode;
 	}
-
-	public Integer getCompanyCode() {
-		return companyCode;
+	
+	// Getters and Setters
+	
+	public Integer getAssocCompanyCode() {
+		return assocCompanyCode;
 	}
 
-	public void setCompanyCode(Integer companyCode) {
-		this.companyCode = companyCode;
+	public void setAssocCompanyCode(Integer assocCompanyCode) {
+		this.assocCompanyCode = assocCompanyCode;
 	}
 
 	public String getStockExchange() {
@@ -58,4 +54,18 @@ public class CompanyToStockExchangeMapper {
 		this.stockExchange = stockExchange;
 	}
 
+	public String getStockCode() {
+		return stockCode;
+	}
+
+	public void setStockCode(String stockCode) {
+		this.stockCode = stockCode;
+	}
+	
 }
+	
+	
+	
+	
+
+	
