@@ -1,4 +1,4 @@
-FROM openjdk:8
-ADD target/stock-exchange.jar stock-exchange.jar
-EXPOSE 8082
-ENTRYPOINT ["java", "-jar", "stock-exchange.jar"]
+FROM openjdk:8-jdk-alpine
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
