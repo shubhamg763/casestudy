@@ -3,7 +3,7 @@ MAINTAINER Shubham Gupta
 COPY pom.xml /build/
 COPY src /build/src/
 WORKDIR /build/
-RUN mvn package -Dmaven.test.skip-=true
+RUN mvn clean package -DskipTests
 FROM openjdk:8-jre-alpine
 WORKDIR /app
 EXPOSE 8082
